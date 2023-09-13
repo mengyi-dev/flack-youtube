@@ -8,6 +8,10 @@ app = Flask(__name__)
 app.secret_key = "your secret secret key"
 CORS(app) # avoiding  CORS error
 
+@app.route("/")
+def hello_world():
+    return "Mengyi!"
+
 @app.route('/audio', methods=['GET'])
 def download_mp3():
     # getting a get request from client 
@@ -51,6 +55,4 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-@app.route("/")
-def hello_world():
-    return "Mengyi!"
+
